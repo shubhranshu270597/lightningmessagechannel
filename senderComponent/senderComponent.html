@@ -1,0 +1,42 @@
+<!--
+  @description       : 
+  @author            : shubhranshu
+  @group             : 
+  @last modified on  : 06-08-2024
+  @last modified by  : shubhranshu
+-->
+<template>
+    <div class="slds-text-heading_medium slds-text-align_center">Extinction Animals</div>
+    <div class="slds-box">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_striped">
+                <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="" scope="col">
+                        Extinction animal
+                    </th>
+                    <th class="" scope="col">
+                       Country
+                    </th>
+                    <th class="" scope="col">
+                        Extinction since
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={extinctAnimals} for:item="animals">
+                    <tr class="slds-hint-parent" key={animals.name}>
+                        <td data-label="Name">
+                            <div class="slds-cell-wrap"><img src={animals.publicImageUrl} height="100" width="100" onclick={sendMessage} data-name={animals.name} data-animaldata={animals.shortData} data-country={animals.country}></img></div>
+                        </td>
+                        <td data-label="Country">
+                            <div class="slds-cell-wrap">{animals.country}</div>
+                        </td>
+                        <td data-label= "Since">
+                            <div class="slds-cell-wrap">{animals.extinctionSince}</div>
+                        </td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </div>
+</template>
